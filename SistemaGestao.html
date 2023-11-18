@@ -1,0 +1,39 @@
+ <script>
+        function calcularSituacao(nota) {
+            if (nota >= 6) {
+                return "Aprovação";
+            } else if (nota >= 2) {
+                return "Prova final";
+            } else {
+                return "Reprovação";
+            }
+        }
+
+        var notasTurma = [];
+
+        function receberNotas() {
+            var nota;
+            while ((nota = parseFloat(prompt("Digite a nota (ou uma nota negativa (-) para encerrar):"))) >= 0 || isNaN(nota)) {
+                notasTurma.push(nota);
+            }
+
+            var somaNotas = 0;
+            for (var i = 0; i < notasTurma.length; i++) {
+                somaNotas += notasTurma[i];
+            }
+
+            var mediaTurma = notasTurma.length > 0 ? somaNotas / notasTurma.length : 0;
+
+            alert("Média da turma: " + mediaTurma.toFixed(2));
+
+            var resultado = "Listagem de notas:\n";
+            for (var i = 0; i < notasTurma.length; i++) {
+                var situacao = calcularSituacao(notasTurma[i]);
+                resultado += "Aluno " + (i + 1) + ": Nota " + notasTurma[i] + " - Situação: " + situacao + "\n";
+            }
+
+            alert(resultado);
+        }
+
+        receberNotas();
+    </script>
