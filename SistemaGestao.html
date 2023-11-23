@@ -22,7 +22,12 @@
                 somaNotas += notasTurma[i];
             }
 
-            var mediaTurma = notasTurma.length > 0 ? somaNotas / notasTurma.length : 0;
+            var mediaTurma;
+            if (notasTurma.length > 0) {
+            mediaTurma = somaNotas / notasTurma.length;
+            } else {
+            mediaTurma = 0;
+            }
 
             alert("Média da turma: " + mediaTurma.toFixed(2));
 
