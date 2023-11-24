@@ -1,11 +1,11 @@
  <script>
         function calcularSituacao(nota) {
             if (nota >= 6) {
-                return "Aprovação";
+                return ("Aprovação");
             } else if (nota >= 2) {
-                return "Prova final";
+                return ("Prova final");
             } else {
-                return "Reprovação";
+                return ("Reprovação");
             }
         }
 
@@ -22,6 +22,7 @@
                 somaNotas += notasTurma[i];
             }
 
+            
             var mediaTurma;
             if (notasTurma.length > 0) {
             mediaTurma = somaNotas / notasTurma.length;
@@ -31,10 +32,10 @@
 
             alert("Média da turma: " + mediaTurma.toFixed(2));
 
-            var resultado = "Listagem de notas:\n";
+            var resultado = ("Listagem de notas:\n");
             for (var i = 0; i < notasTurma.length; i++) {
                 var situacao = calcularSituacao(notasTurma[i]);
-                resultado += "Aluno " + (i + 1) + ": Nota " + notasTurma[i] + " - Situação: " + situacao + "\n";
+                resultado += ("Aluno " + (i + 1) + ": Nota " + notasTurma[i] + " - Situação: " + situacao + "\n");
             }
 
             alert(resultado);
